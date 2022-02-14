@@ -1,0 +1,510 @@
+body {
+    font-family: system-ui;
+}
+.nav-link {
+    color: black;
+}
+.navbar-brand {
+    margin-left: 9%;
+}
+.nav-link:hover {
+    color: black;
+    opacity: 0.9;
+}
+.languageDetailNavMenu {
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+/*共通*/
+.flex {
+    display: flex;
+}
+
+/*トップコンテンツ*/
+.main-info {
+    font-size: 4rem;
+    font-weight: bold;
+    left: 10%;
+    top: 150px;
+    position: relative;
+}
+.main-info {
+    animation: SlideIn 1.6s;
+    width: fit-content;
+}
+.p {
+    animation: SlideIn 3.2s;
+    width: fit-content;
+}
+  
+/* CSSアニメーションの設定 */
+@keyframes SlideIn {
+    0% {
+        opacity: 0;/*初期状態では透明に*/
+        transform: translateX(64px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.p {
+    position: relative;
+    left: 11%;
+    top: 170px;
+    margin-top: 20px;
+}
+.p span {
+    margin-left: 30px;
+}
+.topcontent {
+    background-color: #2a2b2b;
+    color: whitesmoke;
+    min-height: 500px;
+}
+footer {
+    height: 56px;
+}
+footer > p {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid gainsboro;
+}
+.nav {
+    padding-left: 10%;
+}
+
+.main-v {
+    position: relative;
+    margin-bottom: 30px;
+}
+ 
+.main-container{
+    position:relative;
+    width: 65%;
+    margin-left:10%;
+    margin-right:auto;
+}
+ 
+
+/*タブ*/
+.tab-area > a > button {
+    height: 50px;
+}
+.tab-area a {
+    width: 34%;
+}
+.tab-area a button {
+    width: 100%;
+}
+.tab-clicked {
+    border: 2px solid gray;
+    background: #f5f4f4;
+    border-bottom: unset;
+}
+.tab-nonclick {
+    border: 2px solid gray;
+    background: #adadad;
+}
+
+.secDesc {
+    margin: 40px 0px;
+    padding: 12px;
+    border-bottom: 2px solid gainsboro;
+    font-size: 2.5rem;
+}
+
+/*グラフ*/
+canvas {
+    border: #2a2b2b 1px solid;
+}
+
+/*メッセージ*/
+.error {
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    color: #333333;
+}
+
+/*ランキングカード*/
+.card {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.card:hover {
+    box-shadow: 3px 3px 15px grey;
+    background: rgb(251, 255, 255);
+}
+.card-a {
+    color: unset !important;
+    text-decoration: unset !important;
+}
+.card > div {
+    margin: 1.25rem;
+}
+.card > div > h3 {
+    border-bottom: 2px solid rgb(229, 229, 231);
+    padding-bottom: 5px;
+    font-size: 2.2rem;
+}
+.card-img {
+    margin-left: 5px;
+    vertical-align: bottom;
+    width: 32px;
+    height: 32px;
+}
+.rank-img {
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+/*ぺジネーション*/
+.pagenetion-area {
+    display: flex;
+    list-style: none;
+    width: 90%;
+    margin: unset;
+    padding: unset;
+}
+
+.pagenetion-area li button {
+    border: 2px solid gainsboro;
+    padding: 15px 20px;
+    margin-right: 1.0rem;
+    border-radius: 5px;
+}
+.pagenetion-area li button:hover,
+.pageSelected {
+    color:#fff;
+    background: #2a2b2b;
+}
+
+.service-area {
+    display: flex;
+    list-style: none;
+    padding: unset;
+}
+.service-area li {
+    margin-right: 20px;
+}
+.service-area a {
+    color: whitesmoke;
+    text-decoration: noen;
+}
+.service-area img {
+    height: 70px;
+    min-width: 180px;
+    border: 1px solid darkgray;
+}
+
+/*ツールチップ*/
+
+/* マウスオンする要素とツールチップを横並びにする */
+.c-tooltip {
+    display: inline-block;
+    position: relative;
+}
+
+/* ツールチップ共通の設定 */
+.c-tooltip::before,
+.c-tooltip::after {
+    -webkit-transition: all 0.2s;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.2s;
+    visibility: hidden;
+    z-index: 11;
+}
+
+/* ツールチップ吹き出しのひげ */
+.c-tooltip::before {
+    -webkit-transform: translateY(-50%);
+    border-color: transparent #5f6368 transparent transparent;
+    border-style: solid;
+    border-width: 3px 7px 3px 0;
+    content: "";
+    height: 0;
+    left: calc(100% + 6px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+}
+
+/* ツールチップ吹き出しの本体 */
+.c-tooltip::after {
+    -webkit-transform: translateY(-50%);
+    background: #5f6368;
+    border-radius: 3px;
+    color: #fff;
+    content: attr(data-tooltip); /* ここでdata-tooltipの内容を呼び出しているよ */
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    left: calc(100% + 13px);
+    padding: 5px 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+/* マウスオンしたときのカーソルの設定 */
+.c-tooltip:hover {
+    cursor: pointer;
+}
+
+.c-tooltip:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.c-tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*タグボタン*/
+.selectedTag {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+.qiita-button:hover {
+    opacity: 1.0;
+}
+.github-button:hover {
+    opacity: 1.0;
+}
+
+/*サービスボタン*/
+.opa {
+    opacity: 0.5;
+}
+
+/*言語詳細ページ*/
+.languageName {
+    font-size: 4rem;
+}
+.languageImg {
+    width: 50px;
+}
+.selfIntroduction {
+    margin-top: 5%;
+}
+.selfIntroduction .message {
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 10px;
+    background: #f7f7f7;
+}
+.selfIntroduction .factIcon {
+    height: 50px;
+    border-radius: 50%;
+    width: 50px;
+}
+.selfIntroduction .name {
+    color: rgb(50, 50, 117);
+    top: 12px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    position: relative;
+    text-decoration: none;
+}
+.selfIntroduction .post,
+.selfIntroduction .update {
+    text-align: end;
+    margin-right: 2%;
+}
+.selfIntroduction .post {
+    margin-top: 1%;
+}
+.selfIntroduction img {
+    width: 16px;
+}
+
+.h2-ld {
+    border-bottom: 2px solid gainsboro;
+    padding-left: 0.8rem;
+}
+.section-ld {
+    margin-top: 5%;
+    font-size: 1.2rem;
+}
+.helf {
+    width: 50%;
+}
+.section-ld p {
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: unset;
+}
+.section-ld div {
+    margin: 10px;
+}
+.section-ld h4 {
+    border-left: 5px solid #4f4f50;
+    padding-left: 5px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.section-ld h5 {
+    border-left: 3px solid black;
+    padding-left: 5px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.section-ld a {
+    margin-left: 1rem;
+}
+.section-ld table {
+    margin-left: 0.5rem;
+    margin: 1.5rem 0.5rem;
+    width: 70%;
+}
+.section-ld td {
+    border: 1px solid;
+    padding: 0.7rem;
+}
+.section-ld .tabletitle {
+    background-color: #2a2b2b;
+    color: #f5f4f4;
+}
+
+/*プラポリ*/
+.pp {
+    margin-top: 5%;
+    background: #f3f3f3;
+    padding: 2%;
+    border-radius: 10px;
+}
+/*広告エリア*/
+.advertising-area {
+    width: 25%;
+    padding: 2%;
+    margin-top: 5%;
+}
+.widget--sticky1 {
+    position: sticky;
+    top: 60px;
+}
+.widget--sticky2 {
+    position: sticky;
+    top: 400px;
+}
+.contact-iframe {
+    width: 800px;
+    height: 1000px;
+}
+ 
+/*bootstrapのメディアクエリに合わせて、表示位置やフォントサイズを調整*/
+@media screen and (max-width: 767px) {
+
+    /*タイトル*/
+    .navbar-brand {
+        margin-left: unset;
+        font-size: unset;
+        font-size: smaller
+    }
+    .navbar {
+        max-width: 100vw;
+    }
+    .main-v {
+        overflow-x: hidden;
+    }
+    /*「今学ぶべき。。」*/
+    .main-info {
+        top: 150px;
+        max-width: 80%;
+        font-size: 2.5rem;
+        margin: unset;
+        left: 2%;
+    }
+    .p {
+        top: 160px;
+        margin: unset;
+        left: 2%;
+    }
+    /*広告エリア(サイドバー)非表示*/
+    .advertising-area {
+        display: none;
+    }
+    .main-container {
+        margin-left: unset;
+        width: 100vw;
+    }
+    /*「プログラミング言語グラフデータ」*/
+    .secDesc {
+        font-size: 1.8rem;
+    }
+    /*グラフ*/
+    #graph {
+        height: 320px !important;
+    }
+    .secDesc + p {
+        margin: 0px 10px;
+    }
+    /*ランキングカード*/
+    .card {
+        margin: 1rem;
+    }
+    .rank-img {
+        width: 32px;
+        height: 32px;
+    }
+    .card > div > h3  {
+        font-size: 2rem;
+    }
+    /*言語詳細ページ*/
+    .languageContent {
+        margin: 0px 5%;
+    }
+    .languageName {
+        font-size: 2.8rem;
+    }
+    .section-ld img {
+        width: 100%;
+    }
+    /*広告バナー*/
+    .section-ld h5 {
+        margin-left: unset;
+    }
+    .section-ld a {
+        margin-left: unset;
+    }
+
+
+    /*サービスボタン*/
+    .service-area li {
+        margin-left: 5px;
+    }
+
+    /*プラポリ*/
+    .pp {
+        margin: 0px 5%;
+    }
+    .pp1 {
+        background-color: unset !important;
+    }
+
+    .contact-iframe {
+        width: 400px !important;
+    }
+}
+ 
+/* @media screen and (min-width: 768px) {
+    .main-info h2{
+      
+    }
+} */
+ 
+/* Medium devices (desktops, 992px and up) */
+/* @media screen and (min-width: 992px) {
+ 
+} */
+ 
+/* Large devices (large desktops, 1200px and up) */
+/* @media screen and (min-width: 1200px) {
+ 
+} */

@@ -1,0 +1,48 @@
+<div class="languageContent">
+  <section style="margin-top: 2%;">
+    <div><a href="https://programming-ranking.com/">最新プログラミング言語ランキングサイト2021</a>  >  {{languageName}}</div>
+  </section>
+  <section style="margin-top: 2%;">
+    <h1 class="languageName">{{languageName}}<span><img class="languageImg" ng-src="{{imgUrl}}" /></span></h1>
+    <p>このページでは{{languageName}}について、様々な情報を提供します。</p>
+  </section>
+  <section class="selfIntroduction">
+    <div class="flex">
+      <img class="factIcon" src="../resources/img/fact.jpg" />
+      <a class="name" href="https://fact-cs.com/">fact記事編集部</a>
+    </div>
+    <div class="message">
+      <p>こんにちは！わたしたちは現役Webエンジニアからなる開発チーム<a href="https://fact-cs.com/"> fact </a>です。</p>
+      <p>弊チームは2021年5月より活動を開始いたしました。メンバーはそれぞれ現役Webエンジニアとして稼働しております。</p>
+      <p><a href="https://programming-ranking.com/">プログラミング言語ランキングサイト</a>では各種大型プラットフォームから毎日自動集計したデータによるランキングだけでなく</p>
+      <p><strong>現役Webエンジニアだからこそ書ける</strong>各人気言語の紹介記事も記載しております。</p>
+      <p>是非、最後までご覧ください。</p>
+    </div>
+    <div class="post">投稿日 <span><img src="../resources/img/createArticle.jpeg" /></span> {{createdAt}}</div>
+    <div class="update">更新日 <span><img src="../resources/img/reload.png" /></span> {{updatedAt}}</div>
+  </section>
+    <section class="section-ld">
+      <h2 class="h2-ld">特徴</h2>
+      <div ng-bind-html="feature"></div>
+    </section>
+    <section class="section-ld">
+      <h2 class="h2-ld">何ができるのか</h2>
+      <div ng-bind-html="abilityTodo"></div>
+    </section>
+    <section class="section-ld">
+      <h2 class="h2-ld">年収</h2>
+      <div ng-bind-html="annualIncome"></div>
+    </section>
+    <section class="section-ld">
+      <h2 class="h2-ld">現役エンジニアからの声</h2>
+      <div ng-bind-html="review"></div>
+    </section>
+    <section class="section-ld" ng-if="certificateSection">
+      <h2 class="h2-ld">関連資格</h2>
+      <div ng-bind-html="certificate"></div>
+    </section>
+    <section class="section-ld">
+      <h2 class="h2-ld">学習方法</h2>
+      <div ng-bind-html="howToStudy"></div>
+    </section>
+</div>

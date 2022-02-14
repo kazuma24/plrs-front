@@ -1,0 +1,21 @@
+<section id="dailyGitHub">
+    <section-drctv></section-drctv>
+    <githubtag-drctv></githubtag-drctv>
+    <div ng-if="!errorFlag">
+      <canvas id="graph"></canvas>
+      <div style="text-align: end;">{{ period }}</div>
+      <h3 class="secDesc" id="target">GitHub毎日の言語ランキング</h3>
+      <div class="card" ng-repeat="rDObj in rankingDispObj | limitTo: len: start">
+          <div class="c-tooltip" data-tooltip="{{rDObj.languageName + 'の詳細情報を確認'}}" ng-click="languageDetailPageMove(rDObj.languageName)">
+            <h3 ng-clock><span ng-if="rDObj.rankImg"><img class="rank-img" ng-src="../resources/img/{{rDObj.rankImg}}"/></span>{{  rDObj.rank + "位 " + " " + rDObj.languageName }}<span><img class="card-img" ng-src="{{ rDObj.imgUrl }}"></span></h3>
+            <div class="card-body">
+              <h4 class="card-title" ng-clock>{{ rDObj.catchPhrase }}</h4>
+              <p class="card-text" ng-bind-html="rDObj.description"></p>
+              <div><span>前日比:リポジトリ数<img style="margin: 0px 2px 5px;" ng-src="../resources/img/{{ rDObj.arrowIconPath }}" />{{ rDObj.incremental }}</span></div>
+            </div>
+          </div>
+      </div>
+      <pagenetion-drctv></pagenetion-drctv>
+    </div>
+    <error-drctv ng-if="errorFlag"></error-drctv>
+</section>
